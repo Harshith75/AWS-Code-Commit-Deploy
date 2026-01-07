@@ -133,6 +133,15 @@ Expected:
 EC2CodeDeployRole
 
 ```
+To verify the credentials - “169.254.169.254 is a link-local metadata endpoint available only inside an EC2 instance, used to fetch IAM role credentials.”
+```
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/(Ec2-role name)
+```
+Expected:
+```
+Would return JSON credentials.
+
+```
 Location for CodeDeploy logs:
 ```
 /opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployments.log
